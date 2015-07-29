@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    	<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="robots" content="noodp,noydir">
+		
+		<title>Register</title>
+		 
+		
+		
+
+ <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="{%static "assets/css/bootstrap/bootstrap.css"%}"  /> 
+
+    <!-- Calendar Styling  -->
+    <link rel="stylesheet" href="{%static  "assets/css/plugins/calendar/calendar.css" %}"/> 
+    <!-- Fonts 
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,300' rel='stylesheet' type='text/css'>    ->
+    <! Base Styling  -->
+
+    <link rel="stylesheet" href="{%static "assets/css/app/app.v1.css" %}"/>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+    <div class="container">
+      <div class="row">
+      <div class="col-lg-4 col-lg-offset-4">
+      <a href="/home/"><img src="{%static "assets/images/logo.png" %}"></a>
+            <hr class="clean">
+
+
+        	<form role="form">
+              <div class="form-group input-group" action ="/makeuser/register/" method = "post" enctype = "multipart/form-data"> {% csrf_token %} 
+
+{{form.as_ul}}
+              	
+                Remember me
+              </div>
+        	  <button type="submit" action="register" class="btn btn-purple btn-block">Register</button>
+            </form>
+            <hr>
+            
+            <p class="text-center text-gray">Already have account</p>
+            <a href="/accounts/login/"><button type="submit" class="btn btn-default btn-block">Sign In</button></a>
+        </div>
+        </div>
+    </div>
+    
+    
+    
+</body></html>
+
+		

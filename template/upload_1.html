@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block content %}
+
+	<form action ="/files1upload/" method = "post" enctype = "multipart/form-data"> {% csrf_token %}
+	<ul>
+	{{ form.as_ul}}
+	</ul>
+	<input type="submit" name = "Submit" value = "Upload">
+	</form>
+	
+	<a href="/accounts/loggedin/"><input type="button" name="Cancel" value="Cancel"></a>
+{% endblock%}

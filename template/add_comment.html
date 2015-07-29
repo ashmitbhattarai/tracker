@@ -1,0 +1,121 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    	<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="robots" content="noodp,noydir">
+		
+		<title>Add Comment</title>
+		 
+		
+		
+
+
+</script>
+
+
+
+    <script type="text/javascript" src="{%static "assets/js/prototype.js" %}"></script>
+<script type="text/javascript" src="{%static "assets/js/wonder.js" %}"></script>
+<script type="text/javascript" src="{%static "assets/js/effects.js" %}"></script>
+<script type="text/javascript" src="{%static "assets/js/rot13.js" %}"></script>
+<link rel="stylesheet" type="text/css" href="{%static "assets/css/home2.css" %}">
+<script>
+function startTime()
+{
+var today=new Date();
+var h=today.getHours();
+var m=today.getMinutes();
+var s=today.getSeconds();
+// add a zero in front of numbers<10
+m=checkTime(m);
+s=checkTime(s);
+document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+t=setTimeout(function(){startTime()},500);
+}
+
+function checkTime(i)
+{
+if (i<10)
+  {
+  i="0" + i;
+  }
+return i;
+}
+</script>
+</head>
+
+<div id="grid"></div>
+
+
+<div id="header">
+		<div class="wrapper">
+		<a href="/home/"><img src="{%static "assets/images/logo.png" %}"></a>
+			
+			<ul>
+			<li class="selected"><a href="/accounts/loggedin"><span>{{full_name}}</span></a></li>
+			<li><a href="/files/"><span>Files</span></a></li>
+			<li><a href="/contacts/"><span>Contact us</span></a></li>
+			<li class="login"><a href="/accounts/logout/"><span>Log Out</span></a></li>
+		</ul>
+	</div>
+</div>
+<div id="fullContainer" updateurl="/app/5/ajax/20JicHFa6cksaEnC6hFbUM/0.0.11.1.3">
+	<div id="container" class="internal">
+		<div id="top">
+			<div class="wrapper">
+				<div class="col1">
+					<h2>Comment</h2>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		
+		
+		<div id="content">
+			<div class="wrapper">
+			
+	
+				<div class="ctleft"></div>
+				<div class="ctright"></div>
+				<div class="cbleft"></div>
+				<div class="cbright"></div>
+			</div>
+			
+			
+			<form name="f_0_11_1_3_1" action ="/stdpages/add_comment/{{Status1.id}}/" method = "post" enctype = "multipart/form-data"> {% csrf_token %}
+				<input value="false" name="returning" id="returning" type="hidden">
+				<table class="login" style="margin-left: auto; margin-right: auto;">
+				<tbody><tr>
+				<p class="mtop0 mbottom025">	
+	<ul>
+	{{ form.as_ul}}	
+	
+	</ul>
+	
+
+	<td style="padding-top: 10px;"></td>	<input class="public-button" tabindex="4" type="submit" name = "Submit" value = "Update" ><t>
+	<a href="/accounts/loggedin/"><input class="public-button" tabindex="4" type="submit" name = "Submit" value = "Cancel"></a> </t>
+	<ul></form></ul>	
+
+
+	
+<br></br>		
+<div id="footer" class="footer-home">
+	<div class="wrapper">
+		<p>
+			
+			<a href="/help/"><span>Help</span></a> <span class="bar">|</span>
+			<a href="/contacts/">Contact</a>
+		</p>
+		<p id="copyright">
+			Copyright © 2014 Assignment Tracker</a>. All rights reserved.
+		</p>
+	</div>
+</div>
+
+
+
+</body></html>

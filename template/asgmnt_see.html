@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    	<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="robots" content="noodp,noydir">
+		
+		<title>View Assignments</title>
+		 
+		
+		
+
+
+</script>
+
+
+    <script type="text/javascript" src="{%static "assets/js/prototype.js" %}"></script>
+<script type="text/javascript" src="{%static "assets/js/wonder.js" %}"></script>
+<script type="text/javascript" src="{%static "assets/js/effects.js" %}"></script>
+<script type="text/javascript" src="{%static "assets/js/rot13.js" %}"></script>
+<link rel="stylesheet" type="text/css" href="{%static "assets/css/home2.css" %}">
+</head>
+
+<div id="grid"></div>
+
+
+<div id="header">
+		<div class="wrapper">
+		<a href="/home/"><img src="{%static "assets/images/logo.png" %}"></a>
+			
+			<ul>
+			<li class="selected"><a href="/home/"><span>Home</span></a></li>
+			<li><a href="/contacts/"><span>Contact us</span></a></li>
+			<li class="login"><a href="/accounts/logout/"><span>Logout</span></a></li>
+		</ul>
+	</div>
+</div>
+
+	<div id="fullContainer" updateurl="/app/5/ajax/20JicHFa6cksaEnC6hFbUM/0.0.11.1.3">
+	<div id="container" class="internal">
+		<div id="top">
+			<div class="wrapper">
+				<div class="col1">
+					<h2>View Assignments</h2>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		
+		<div id="content">
+			<div class="wrapper">
+			
+			
+			<div style="margin-top:25px;" >
+					
+									
+				
+				<div class="ctleft"></div>
+				<div class="ctright"></div>
+				<div class="cbleft"></div>
+				<div class="cbright"></div>
+			</div>
+			
+			
+{%for lists in asg_notify%}
+{%if lists.assignment == True and lists.submitted == False %}
+<b> {{lists.subject}} Assignment: </b> <br/>
+Days remaining : <b>{{lists.timer}}</b></br>
+
+<a href = "/stdpages/delete/{{lists.id}}"><input class="main-button" type="button" name="Mark SUbmitted" value="Mark Submitted"></a> </br> </br>
+
+
+{%endif%}
+{%endfor%}
+
+<a href="/accounts/loggedin/"><input class="main-button" type="button" name="Back" value="Back"></a>
+
+		
+<br></br>		
+<div id="footer" class="footer-home">
+	<div class="wrapper">
+		<p>
+			
+			<a href="/help/"><span>Help</span></a> <span class="bar">|</span>
+			<a href="/contacts/">Contact</a>
+		</p>
+		<p id="copyright">
+			Copyright © 2014 Assignment Tracker</a>. All rights reserved.
+		</p>
+	</div>
+</div>
+
+
+
+</body></html>
+
+

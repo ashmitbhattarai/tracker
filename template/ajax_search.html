@@ -1,0 +1,9 @@
+{% if result.count > 0 %}
+
+{%for hits in result%}
+<li>{{hits.user}} posted about {{hits.subject}}</li>
+{% endfor %}
+{% else %}
+<li>No Such Subjects Registered </li>
+{% endif %}
+

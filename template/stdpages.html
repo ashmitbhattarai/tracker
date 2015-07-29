@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+
+	<head>
+		<title>Users</title>
+	</head>
+
+
+	<body bgcolor="AABB99">
+	<h1> The Users are:</h1>
+	{% for stdpages in stdpage %}
+	<div id = 'list'>
+	<h3><a href ="/stdpages/get/{{ stdpages.id }}/">{{ stdpages.fname }}</a></h2>
+	</div>
+	{% endfor %}
+		
+	</body>
+</html>
